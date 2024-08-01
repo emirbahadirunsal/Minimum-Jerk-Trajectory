@@ -22,11 +22,11 @@
 
 1. **Normalized Time Vector:**
 
-    $$ \tau = \frac{t}{T}, \quad \text{where } 0 \leq t \leq T $$
-
+   $$ \tau = \frac{t}{T}, \quad \text{where } 0 \leq t \leq T $$
+   
     $\tau$ is a normalized time variable that scales the actual time $t$ to the range $[0, 1]$ over the segment duration $T$.
 
-2. **Position Difference and Initial Velocity:**
+3. **Position Difference and Initial Velocity:**
 
     $$
     \text{pos\_diff} = \text{end\_pos} - \text{start\_pos}
@@ -36,7 +36,7 @@
     \text{vel\_diff} = -\text{start\_vel}
     $$
 
-3. **Position Trajectory:**
+4. **Position Trajectory:**
     The position as a function of normalized time $\tau$ is given by:
 
     $$
@@ -45,7 +45,7 @@
 
     The polynomial $10\tau^3 - 15\tau^4 + 6\tau^5$ ensures that the jerk is minimized. The coefficients are chosen such that the position starts at $x_0$ and ends at $x_f$ with smooth transitions.
 
-4. **Velocity Trajectory:**
+5. **Velocity Trajectory:**
     Taking the first derivative of the position function with respect to time $t$:
 
     $$
@@ -54,14 +54,14 @@
 
     Here, $\frac{d\tau}{dt} = \frac{1}{T}$.
 
-5. **Acceleration Trajectory:**
+6. **Acceleration Trajectory:**
     Taking the second derivative of the position function:
 
     $$
     a(\tau) = \frac{1}{T^2} \left( x_f - x_0 - v_0 T \right) \left(60\tau - 180\tau^2 + 120\tau^3\right)
     $$
 
-6. **Jerk Trajectory:**
+7. **Jerk Trajectory:**
     Taking the third derivative of the position function:
 
     $$
