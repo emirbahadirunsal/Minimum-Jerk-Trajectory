@@ -23,8 +23,7 @@
 1. **Normalized Time Vector:**
 
    $$\tau = \frac{t}{T}, \quad \text{where } 0 \leq t \leq T$$
-   
-    $\tau$ is a normalized time variable that scales the actual time $t$ to the range $[0, 1]$ over the segment duration $T$.
+   $\tau$ is a normalized time variable that scales the actual time $t$ to the range $[0, 1]$ over the segment duration $T$.
 
 3. **Position Difference and Initial Velocity:**
 
