@@ -23,49 +23,38 @@
 1. **Normalized Time Vector:**
 
    $$\tau = \frac{t}{T}, \quad \text{where } 0 \leq t \leq T$$
+
    $\tau$ is a normalized time variable that scales the actual time $t$ to the range $[0, 1]$ over the segment duration $T$.
 
 3. **Position Difference and Initial Velocity:**
 
-    $$
-    \text{pos\_diff} = \text{end\_pos} - \text{start\_pos}
-    $$
+    $$\text{pos\_diff} = \text{end\_pos} - \text{start\_pos}$$
 
-    $$
-    \text{vel\_diff} = -\text{start\_vel}
-    $$
+    $$\text{vel\_diff} = -\text{start\_vel}$$
 
 4. **Position Trajectory:**
     The position as a function of normalized time $\tau$ is given by:
 
-    $$
-    x(\tau) = x_0 + v_0 T \tau + \left( x_f - x_0 - v_0 T \right) \left(10\tau^3 - 15\tau^4 + 6\tau^5\right)
-    $$
+    $$x(\tau) = x_0 + v_0 T \tau + \left( x_f - x_0 - v_0 T \right) \left(10\tau^3 - 15\tau^4 + 6\tau^5\right)$$
 
     The polynomial $10\tau^3 - 15\tau^4 + 6\tau^5$ ensures that the jerk is minimized. The coefficients are chosen such that the position starts at $x_0$ and ends at $x_f$ with smooth transitions.
 
 5. **Velocity Trajectory:**
     Taking the first derivative of the position function with respect to time $t$:
 
-    $$
-    v(\tau) = v_0 + \frac{1}{T} \left( x_f - x_0 - v_0 T \right) \left(30\tau^2 - 60\tau^3 + 30\tau^4\right)
-    $$
+    $$v(\tau) = v_0 + \frac{1}{T} \left( x_f - x_0 - v_0 T \right) \left(30\tau^2 - 60\tau^3 + 30\tau^4\right)$$
 
     Here, $\frac{d\tau}{dt} = \frac{1}{T}$.
 
 6. **Acceleration Trajectory:**
     Taking the second derivative of the position function:
 
-    $$
-    a(\tau) = \frac{1}{T^2} \left( x_f - x_0 - v_0 T \right) \left(60\tau - 180\tau^2 + 120\tau^3\right)
-    $$
+    $$a(\tau) = \frac{1}{T^2} \left( x_f - x_0 - v_0 T \right) \left(60\tau - 180\tau^2 + 120\tau^3\right)$$
 
 7. **Jerk Trajectory:**
     Taking the third derivative of the position function:
 
-    $$
-    j(\tau) = \frac{1}{T^3} \left( x_f - x_0 - v_0 T \right) \left(60 - 360\tau + 360\tau^2\right)
-    $$
+    $$j(\tau) = \frac{1}{T^3} \left( x_f - x_0 - v_0 T \right) \left(60 - 360\tau + 360\tau^2\right)$$
 
 ### MATLAB Code Implementation
 
