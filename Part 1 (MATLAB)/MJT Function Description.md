@@ -22,15 +22,15 @@
 
 1. **Normalized Time Vector:**
 
-   $$\tau = \frac{t}{T}, \quad \text{where } 0 \leq t \leq T$$
+   $$`\tau = \frac{t}{T}, \quad \text{where } 0 \leq t \leq T`$$
 
    $\tau$ is a normalized time variable that scales the actual time $t$ to the range $[0, 1]$ over the segment duration $T$.
 
 3. **Position Difference and Initial Velocity:**
 
-    $$\text{pos\_diff} = \text{end\_pos} - \text{start\_pos}$$
+    $$`\text{pos\_diff} = \text{end\_pos} - \text{start\_pos}`$$
 
-    $$\text{vel\_diff} = -\text{start\_vel}$$
+    $$`\text{vel\_diff} = -\text{start\_vel}`$$
 
 4. **Position Trajectory:**
     The position as a function of normalized time $\tau$ is given by:
