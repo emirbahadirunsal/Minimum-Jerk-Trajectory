@@ -47,9 +47,8 @@ You need to write codes for minimum jerk trajectory following a rectangle. Detai
    ```cpp
    int main(){
        while(iterNum < endRun || ESC){
-           if (target - current > tol)
-               moveRect();
-           iterNum++;
+            moveRect();
+            iterNum++;
        }
    }
    ```
